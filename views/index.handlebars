@@ -12,10 +12,22 @@
 	<button type="submit">Add Burger</button>
 </form>
 
+<h2> burgers to devour </h2>
+
 <ul>
 	{{#each burgers}}
 		{{#unless devoured}}
-		  {{> burgers/burger-block devoured=false}}
+		  {{> burgers/burger-block devour=true}}
 		{{/unless}}
+	{{/each}}
+</ul>
+
+<h2> devoured burgers </h2>
+
+<ul>
+	{{#each burgers}}
+		{{#if devoured}}
+		  {{> burgers/burger-block devour=false}}
+		{{/if}}
 	{{/each}}
 </ul>

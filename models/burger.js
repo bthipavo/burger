@@ -8,7 +8,7 @@ var burger = {
 	},
 
 	insertOne: function(id, burger_name, devoured, cb) {
-		orm.selectOne("burgers", id, burger_name, devoured, function(res) {
+		orm.insertOne("burgers", id, burger_name, devoured, function(res) {
 			cb(res)
 		})
 	},
